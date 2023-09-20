@@ -1,4 +1,5 @@
 using RawDealView;
+using RawDealView.Formatters;
 
 namespace RawDeal;
 
@@ -31,15 +32,19 @@ public class Player
 
     public void DrawCard() => _hand.Add(_deck.DrawCard());
 
-    public void Turn()
-    {
-        _view.SayThatATurnBegins(_superstar.Name);
-        DrawCard();
-    }
-
     public PlayerInfo GetPlayerInfo()
     {
         return new(_superstar.Name, 0, _hand.Count, _deck.GetDeckSize());
+    }
+    
+    public List<string> GetHandString()
+    {
+        List<string> cardStringList = new();
+        foreach (var card in _hand)
+        {
+            cardStringList.Add(Formatter.CardToString(card));
+        }
+        return cardStringList;
     }
 
 }

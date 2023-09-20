@@ -44,7 +44,7 @@ public class Game
                     var optionCardSet = _view.AskUserWhatSetOfCardsHeWantsToSee();
                     if (optionCardSet == CardSet.Hand)
                     {
-                        _view.ShowCards(player.GetPlayerHand());
+                        _view.ShowCards(player.GetHandString());
                     }
                 }
             }

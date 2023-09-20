@@ -32,11 +32,10 @@ public class Deck
     public Card DrawCard()
     {
         Card card = _cardList.Last();
-        _cardList.Remove(card);
+        _cardList.RemoveAt(_cardList.Count - 1);
         return card;
     }
     
     public int GetDeckSize() => _cardList.Count;
-    
     
 }

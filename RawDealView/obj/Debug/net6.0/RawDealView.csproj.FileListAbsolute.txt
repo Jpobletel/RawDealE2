@@ -81,3 +81,15 @@ C:\Users\JavierPobletelopez\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0
 C:\Users\JavierPobletelopez\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0\refint\RawDealView.dll
 C:\Users\JavierPobletelopez\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0\RawDealView.pdb
 C:\Users\JavierPobletelopez\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0\ref\RawDealView.dll
+C:\Users\javie\RiderProjects\RawDealE2\RawDealView\bin\Debug\net6.0\RawDealView.deps.json
+C:\Users\javie\RiderProjects\RawDealE2\RawDealView\bin\Debug\net6.0\RawDealView.dll
+C:\Users\javie\RiderProjects\RawDealE2\RawDealView\bin\Debug\net6.0\RawDealView.pdb
+C:\Users\javie\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0\RawDealView.csproj.AssemblyReference.cache
+C:\Users\javie\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0\RawDealView.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\javie\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0\RawDealView.AssemblyInfoInputs.cache
+C:\Users\javie\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0\RawDealView.AssemblyInfo.cs
+C:\Users\javie\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0\RawDealView.csproj.CoreCompileInputs.cache
+C:\Users\javie\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0\RawDealView.dll
+C:\Users\javie\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0\refint\RawDealView.dll
+C:\Users\javie\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0\RawDealView.pdb
+C:\Users\javie\RiderProjects\RawDealE2\RawDealView\obj\Debug\net6.0\ref\RawDealView.dll
