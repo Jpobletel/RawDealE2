@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "bLHLlShUQog3+l8pQQ6qDtXbZFQnyFVOgG4KrV2byR5DiUFoHM0CnsMBGs+b77XCbx28Y7mIyA6nBfcknjp+0A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\JavierPobletelopez\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.21\\microsoft.netcore.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\JavierPobletelopez\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.21\\microsoft.windowsdesktop.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\JavierPobletelopez\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.21\\microsoft.aspnetcore.app.ref.6.0.21.nupkg.sha512"
+  ],
+  "logs": []
+}
