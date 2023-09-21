@@ -5,7 +5,7 @@ public class Deck
     private List<Card> _cardList = new();
     private Superstar _superstar;
     
-    public Deck( IEnumerable<string> enumerableList, List<Card> cardList, List<Superstar> superstarList )
+    public Deck( IEnumerable<string> enumerableList, List<Card>? cardList, List<Superstar> superstarList )
     {
         CreateDeck(enumerableList, cardList, superstarList);
     }
@@ -15,7 +15,7 @@ public class Deck
     
     public int getSuperstarValue() => _superstar.SuperstarValue;
 
-    public void CreateDeck(IEnumerable<string> enumerableList, List<Card> cardList, List<Superstar> superstarList)
+    public void CreateDeck(IEnumerable<string> enumerableList, List<Card>? cardList, List<Superstar> superstarList)
     {
         List<string> rawDeckList = enumerableList.ToList();
         string superstarName = rawDeckList.First();
