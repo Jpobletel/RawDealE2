@@ -1,5 +1,6 @@
 using RawDealView;
 using Newtonsoft.Json;
+using RawDealView.Formatters;
 using RawDealView.Options;
 using static RawDeal.DeckChecker;
 
@@ -24,9 +25,9 @@ public class Game
 
     public void Play()
     {
-        _playerOne = AssignDeckToPlayer(1);
+        _playerOne = AssignDeckToPlayer();
         if (_playerOne == null) return;
-        _playerTwo = AssignDeckToPlayer(2);
+        _playerTwo = AssignDeckToPlayer();
         if (_playerTwo == null) return;
         _playerOne.FirstTurn();
         _playerTwo.FirstTurn();
@@ -45,18 +46,45 @@ public class Game
                     if (optionNextPlay == NextPlay.ShowCards)
                     {
                         var optionCardSet = _view.AskUserWhatSetOfCardsHeWantsToSee();
-                        if (optionCardSet == CardSet.OpponentsRingArea || optionCardSet == CardSet.OpponentsRingsidePile)
+                        if (optionCardSet is CardSet.OpponentsRingArea or CardSet.OpponentsRingsidePile)
                         {
                             _view.ShowCards(GetOtherPlayer(player).GetStringCards(optionCardSet));
                         }
+                        else
+                        {
+                            _view.ShowCards(player.GetStringCards(optionCardSet));
+                        }
                     }
 
-                    if (optionNextPlay == NextPlay.PlayCard )
+                    else if (optionNextPlay == NextPlay.PlayCard )
                     {
-                        var optionNextPlaySet = _view.AskUserToSelectAPlay(player.GetPlays());
+                        var playList = player.GetPlays();
+                        var stringPlayList = ConvertPlaysToString(playList);
+                        int optionNextPlaySet = _view.AskUserToSelectAPlay(stringPlayList);
+                        if (optionNextPlaySet == -1)
+                        {
+                            _view.ShowGameInfo(player.GetPlayerInfo(), GetOtherPlayer(player).GetPlayerInfo());
+                            optionNextPlay = _view.AskUserWhatToDoWhenHeCannotUseHisAbility();
+                            continue;
+                        }
+
+                        var playedCard = stringPlayList[optionNextPlaySet];
+                        player.PlayCard(playList[optionNextPlaySet], optionNextPlaySet);
+                        _view.SayThatPlayerIsTryingToPlayThisCard(player.GetPlayerSuperstarName() ,playedCard);
+                        _view.SayThatPlayerSuccessfullyPlayedACard();
+                        var damage = Int32.Parse(playList[optionNextPlaySet].Damage);
+                        _view.SayThatSuperstarWillTakeSomeDamage(GetOtherPlayer(player).GetPlayerSuperstarName(),damage);
+                        _winner = DamagePlayer(GetOtherPlayer(player), damage);
+
                     }
-                    _view.ShowGameInfo(_playerOne.GetPlayerInfo(), _playerTwo.GetPlayerInfo());
+
+                    if (!_winner) break;
+                    {
+                        
+                    }
+                    _view.ShowGameInfo(player.GetPlayerInfo(), GetOtherPlayer(player).GetPlayerInfo());
                     optionNextPlay = _view.AskUserWhatToDoWhenHeCannotUseHisAbility();
+
                 }
 
                 if (optionNextPlay == NextPlay.GiveUp)
@@ -67,18 +95,30 @@ public class Game
                     break;
                         
                 }
+
+                if (player.GetPlayerDeckSize() is 0)
+                {
+                    _winner = false;
+                    _view.CongratulateWinner(GetOtherPlayer(player).GetPlayerSuperstarName());
+                    break;
+                }
+                if (GetOtherPlayer(player).GetPlayerDeckSize() == 0)
+                {
+                    _winner = false;
+                    _view.CongratulateWinner(player.GetPlayerSuperstarName());
+                    break;
+                }
             }
         }
         
     }
-    
     public List<Player> CreateTurnList()
     {
         if (_playerOne.GetPlayerSuperstarValue() >= _playerTwo.GetPlayerSuperstarValue())
             return new List<Player> { _playerOne, _playerTwo };
         return new List<Player> { _playerTwo, _playerOne };
     }
-    public Player AssignDeckToPlayer(int playerNumber )
+    public Player AssignDeckToPlayer()
     {
         string deckRoot = _view.AskUserToSelectDeck(_deckFolder);
         IEnumerable<string> enumerableList = File.ReadLines(deckRoot, System.Text.Encoding.UTF8);
@@ -109,5 +149,41 @@ public class Game
     {
         if (player == _playerOne) return _playerTwo;
         return _playerOne;
+    }
+
+    public List<string> ConvertPlaysToString(List<Card> cardList)
+    {
+        List<string> stringPlays = new();
+        foreach (var card in cardList)
+        {
+            
+            if (card.Types.Contains("Maneuver"))
+            {
+                string playString = Formatter.PlayToString(new CardPlayInfo(card, "MANEUVER"));
+                stringPlays.Add(playString);
+            }
+            else if (card.Types.Contains("Action"))
+            {
+                string playString = Formatter.PlayToString(new CardPlayInfo(card, "ACTION"));
+                stringPlays.Add(playString);
+            }
+        }
+
+        return stringPlays;
+    }
+    public bool DamagePlayer(Player player, int damage)
+    {
+        for (int currentDamage = 1; currentDamage <= damage; currentDamage++)
+        {
+            if (player.GetPlayerDeckSize()==0)
+            {
+                return false;
+            }
+            var discardedCard = player.GetLastCardOfDeck();
+            player.RecieveDamage(discardedCard);
+            _view.ShowCardOverturnByTakingDamage(Formatter.CardToString(discardedCard), currentDamage, damage );
+            
+        }
+        return true;
     }
 }

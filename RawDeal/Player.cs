@@ -7,7 +7,7 @@ namespace RawDeal;
 public class Player
 {
     private readonly Superstar _superstar;
-    private int _fortitude = 0;
+    private int _fortitude;
     private readonly List<Card> _hand = new();
     private readonly List<Card> _ringside = new();
     private readonly List<Card> _ringArea = new();
@@ -18,15 +18,18 @@ public class Player
         _deck = deck;
         _superstar = deck.GetSuperstar();
     }
+
     public string GetPlayerSuperstarName() => _superstar.Name;
     public int GetPlayerSuperstarValue() => _superstar.SuperstarValue;
-    public List<Card> GetPlayerHand() => _hand;
+    public int GetPlayerDeckSize() => _deck.GetDeckSize();
+
     public void FirstTurn()
     {
         for (int i = 0; i < _superstar.HandSize; i++) _hand.Add(_deck.DrawCard());
     }
+
     public void DrawCard() => _hand.Add(_deck.DrawCard());
-    public PlayerInfo GetPlayerInfo() => new(_superstar.Name, 0, _hand.Count, _deck.GetDeckSize());
+    public PlayerInfo GetPlayerInfo() => new(_superstar.Name, _fortitude, _hand.Count, _deck.GetDeckSize());
 
     public List<string> GetStringCards(CardSet cardSet)
     {
@@ -35,31 +38,79 @@ public class Player
         {
             foreach (var card in _hand) cardStringList.Add(Formatter.CardToString(card));
         }
-        else if (cardSet == CardSet.RingArea)
+        else if (cardSet is CardSet.RingArea or CardSet.OpponentsRingArea)
         {
             foreach (var card in _ringArea) cardStringList.Add(Formatter.CardToString(card));
         }
-        else if (cardSet == CardSet.RingsidePile)
+        else if (cardSet is CardSet.RingsidePile or CardSet.OpponentsRingsidePile)
         {
             foreach (var card in _ringside) cardStringList.Add(Formatter.CardToString(card));
         }
+
         return cardStringList;
     }
 
-    public List<string> GetPlays()
+    public List<Card> GetPlays()
     {
-        List<string> plays = new();
+        List<Card> plays = new();
         foreach (var card in _hand)
         {
             if (card.Types.Contains("Maneuver") || card.Types.Contains("Action"))
             {
                 if (Int32.Parse(card.Fortitude) <= _fortitude)
                 {
-                    string playString = Formatter.PlayToString(new CardPlayInfo(card, _superstar.Name));
-                    plays.Add(playString);
+                    plays.Add(card);
                 }
             }
         }
         return plays;
     }
+
+    public Card GetLastCardOfDeck()
+    {
+        var removedCard = _deck.DrawCard();
+        return removedCard;
+    }
+
+    public void PlayCard(Card card, int index)
+    {
+        var handIndex = GetDeckIndexOfPlayableCard(index);
+        _hand.RemoveAt(handIndex);
+        _ringArea.Add(card);
+        CalculateFortitude();
+    }
+
+    public void CalculateFortitude()
+    {
+        _fortitude = 0;
+        foreach (var card in _ringArea)
+        {
+            _fortitude += Int32.Parse(card.Damage);
+        }
+    }
+
+    public void RecieveDamage(Card discardedCard) => _ringside.Add(discardedCard);
+    
+    public int GetDeckIndexOfPlayableCard(int playableIndex)
+    {
+        int i = 0;
+        for (var index = 0; index < _hand.Count; index++)
+        {
+            var card = _hand[index];
+            if (card.Types.Contains("Maneuver") || card.Types.Contains("Action"))
+            {
+                if (Int32.Parse(card.Fortitude) <= _fortitude)
+                {
+                    if (i == playableIndex)
+                    {
+                        return index;
+                    }
+                    i++;
+                }
+            }
+
+        }
+        return playableIndex;
+    }
 }
+

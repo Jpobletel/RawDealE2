@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDeal.Tests\\RawDeal.Tests.csproj": {}
+    "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDeal.Tests\\RawDeal.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDeal.Tests\\RawDeal.Tests.csproj": {
+    "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDeal.Tests\\RawDeal.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDeal.Tests\\RawDeal.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDeal.Tests\\RawDeal.Tests.csproj",
         "projectName": "RawDeal.Tests",
-        "projectPath": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDeal.Tests\\RawDeal.Tests.csproj",
-        "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDeal.Tests\\obj\\",
+        "projectPath": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDeal.Tests\\RawDeal.Tests.csproj",
+        "packagesPath": "C:\\Users\\JavierPobletelopez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDeal.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\JavierPobletelopez\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -26,11 +26,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj": {
-                "projectPath": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj"
+              "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj": {
+                "projectPath": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj"
               },
-              "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDeal\\RawDeal.csproj": {
-                "projectPath": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDeal\\RawDeal.csproj"
+              "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDeal\\RawDeal.csproj": {
+                "projectPath": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDeal\\RawDeal.csproj"
               }
             }
           }
@@ -77,26 +77,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.21, 6.0.21]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.21, 6.0.21]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.21, 6.0.21]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\javie\\.dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj": {
+    "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj",
+        "projectUniqueName": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj",
         "projectName": "RawDealView",
-        "projectPath": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj",
-        "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDealView\\obj\\",
+        "projectPath": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj",
+        "packagesPath": "C:\\Users\\JavierPobletelopez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDealView\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\JavierPobletelopez\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -130,26 +144,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.21, 6.0.21]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.21, 6.0.21]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.21, 6.0.21]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\javie\\.dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDeal\\RawDeal.csproj": {
+    "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDeal\\RawDeal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDeal\\RawDeal.csproj",
+        "projectUniqueName": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDeal\\RawDeal.csproj",
         "projectName": "RawDeal",
-        "projectPath": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDeal\\RawDeal.csproj",
-        "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDeal\\obj\\",
+        "projectPath": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDeal\\RawDeal.csproj",
+        "packagesPath": "C:\\Users\\JavierPobletelopez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDeal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\JavierPobletelopez\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -161,8 +189,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj": {
-                "projectPath": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj"
+              "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj": {
+                "projectPath": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDealView\\RawDealView.csproj"
               }
             }
           }
@@ -193,12 +221,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.21, 6.0.21]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.21, 6.0.21]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.21, 6.0.21]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.21, 6.0.21]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\javie\\.dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

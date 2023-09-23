@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "KJsHzebAxDHtWGJb1vo5Mj7hXD+ZVWX2nsEQGlbKmexm4NQorNPjSi7OY2ECvP9ojT8HsTTd14+c9/OGIa+CQQ==",
+  "dgSpecHash": "hv7xlhR8WlP9+Byi+UzhHSUFDIxkiDOZPknhr+O0AGALQR2vHwz9Yr11ugVpWaAv1A36Wltwu6JzPX+V5+9Hjg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\javie\\RiderProjects\\RawDealE2\\RawDeal\\RawDeal.csproj",
+  "projectFilePath": "C:\\Users\\JavierPobletelopez\\RiderProjects\\RawDealE2\\RawDeal\\RawDeal.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\javie\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\JavierPobletelopez\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\JavierPobletelopez\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.21\\microsoft.netcore.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\JavierPobletelopez\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.21\\microsoft.windowsdesktop.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\JavierPobletelopez\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.21\\microsoft.aspnetcore.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\JavierPobletelopez\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.21\\microsoft.netcore.app.host.win-x64.6.0.21.nupkg.sha512"
   ],
   "logs": []
 }
