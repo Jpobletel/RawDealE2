@@ -38,4 +38,6 @@ public class Deck
     
     public int GetDeckSize() => _cardList.Count;
     
+    public void InsertCardToTheBottomOfTheDeck(Card card) => _cardList.Insert(0, card);
+    
 }

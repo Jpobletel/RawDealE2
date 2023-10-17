@@ -12,7 +12,6 @@ public class Player
     private readonly List<Card> _ringside = new();
     private readonly List<Card> _ringArea = new();
     private readonly Deck _deck;
-
     public Player(Deck deck)
     {
         _deck = deck;
@@ -20,8 +19,11 @@ public class Player
     }
 
     public string GetPlayerSuperstarName() => _superstar.Name;
+    public string GetPlayerSuperstarAbility() => _superstar.SuperstarAbility;
     public int GetPlayerSuperstarValue() => _superstar.SuperstarValue;
     public int GetPlayerDeckSize() => _deck.GetDeckSize();
+    public int GetPlayerHandSize() => _hand.Count;
+    public List<Card> GetHand() => _hand;
 
     public void FirstTurn()
     {
@@ -80,7 +82,7 @@ public class Player
         CalculateFortitude();
     }
 
-    public void CalculateFortitude()
+    private void CalculateFortitude()
     {
         _fortitude = 0;
         foreach (var card in _ringArea)
@@ -90,8 +92,8 @@ public class Player
     }
 
     public void RecieveDamage(Card discardedCard) => _ringside.Add(discardedCard);
-    
-    public int GetDeckIndexOfPlayableCard(int playableIndex)
+
+    private int GetDeckIndexOfPlayableCard(int playableIndex)
     {
         int i = 0;
         for (var index = 0; index < _hand.Count; index++)
@@ -101,16 +103,40 @@ public class Player
             {
                 if (Int32.Parse(card.Fortitude) <= _fortitude)
                 {
-                    if (i == playableIndex)
-                    {
-                        return index;
-                    }
+                    if (i == playableIndex) return index;
                     i++;
                 }
             }
 
         }
         return playableIndex;
+    }
+    public int GetRingsideCount() => _ringside.Count;
+
+    public void MoveCardFromRingsideToBottomPile(int index)
+    {
+        var card = _ringside[index];
+        _ringside.RemoveAt(index);
+        _deck.InsertCardToTheBottomOfTheDeck(card);
+    }
+    
+    public void MoveCardFromHandToRingside(int index)
+    {
+        var card = _hand[index];
+        _hand.RemoveAt(index);
+        _ringside.Add(card);
+    }
+    public void MoveCardFromRingsideToHand(int index)
+    {
+        var card = _ringside[index];
+        _ringside.RemoveAt(index);
+        _hand.Add(card);
+    }
+    public void MoveCardFromHandToBottomPile(int index)
+    {
+        var card = _hand[index];
+        _hand.RemoveAt(index);
+        _deck.InsertCardToTheBottomOfTheDeck(card);
     }
 }
 
